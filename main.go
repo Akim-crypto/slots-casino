@@ -74,7 +74,17 @@ func getSpin(reel []string,rows int,cols int) [][]string {
     return result
 }
 
-
+func printSpin(spin [][]string){
+    for _,row := range spin{
+        for j,symbol:= range row{
+            fmt.Print(symbol)
+            if j != len(row) -1 {
+                fmt.Printf(" | ")
+            }
+        }
+        fmt.Println()
+    }
+}
 
 
 func main(){
@@ -93,7 +103,7 @@ func main(){
 
     symbolArr := generateSymbolArray(symbols)
     spin := getSpin(symbolArr, 3,3)
-    fmt.Println(spin)
+    printSpin(spin)
 
 
 
